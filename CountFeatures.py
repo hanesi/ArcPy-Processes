@@ -13,7 +13,7 @@ for root, dirs, files in os.walk(directory):
         if file.endswith(".shp"):
             #Set the path of each individual file
             pth = os.path.join(directory,file)
-            #Retrieve the filename
+            #Retrieve the filename (no extension, a requirement of the function)
             filename = file.replace(".shp","")
             #Create an in memory copy of each file and count the number of features
             arcpy.MakeFeatureLayer_management(pth,filename)
